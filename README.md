@@ -69,7 +69,7 @@ npm run create-admin -- admin@starcore.co "PasswordKuat123" "Nama Admin"
 Alternatif tanpa terminal: buat user di Supabase **Authentication → Users → Add user** (centang *Auto confirm*), lalu jalankan di SQL Editor:
 
 ```sql
-update public.profiles set role = 'ADMIN' where email = 'admin@starcore.co';
+update auth.users set raw_app_meta_data = raw_app_meta_data || '{"role":"ADMIN"}' where email = 'admin@starcore.co';
 ```
 
 Setelah login, buka **Settings** untuk mengisi nama & WhatsApp admin registrasi dan jangka pembayaran (default H+7).
@@ -112,3 +112,7 @@ psql -d test -f supabase/tests/workflow_e2e.sql
 ## Migrasi data dari V4.1.1
 
 Skema baru memakai nama kolom snake_case yang sepadan dengan sheet lama (`Campaigns.creatorNeeded` → `campaigns.creator_needed`, dst.). Karena akun pindah ke Supabase Auth, password lama tidak dapat dibawa: impor creator dengan `auth.admin.createUser` lalu minta mereka memakai **Lupa password**. Untuk campaign yang sedang berjalan, paling aman menyelesaikannya di V4.1.1 dan memulai campaign baru di V5.
+
+## Mencegah Supabase di-pause (paket gratis)
+
+Supabase mem-pause project paket gratis yang sepi aktivitas selama 7 hari. Aplikasi ini memasang Vercel Cron (`vercel.json`) yang memanggil `/api/keep-alive` sekali sehari pukul 03:00 UTC (10:00 WIB). Endpoint itu menjalankan satu query ringan ke database. Opsional: tambahkan environment variable `CRON_SECRET` (teks acak panjang) di Vercel supaya endpoint hanya bisa dipanggil oleh Vercel Cron. Cek jalannya di Vercel → project → **Settings → Cron Jobs**.
