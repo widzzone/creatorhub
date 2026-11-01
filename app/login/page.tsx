@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BrandMark } from '@/components/app/brand-mark';
-import { SOP_STEPS } from '@/lib/constants';
+import { LoginShowcase } from '@/components/app/login-showcase';
 import { LoginForm } from './login-form';
 
 export const metadata: Metadata = { title: 'Masuk' };
@@ -11,9 +11,9 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 
   return (
     <main className="grid min-h-dvh lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      {/* Panel kiri: identitas produk dan rail 11 tahap SOP */}
+      {/* Panel kiri: identitas produk dan animasi 11 tahap SOP */}
       <section className="hidden flex-col bg-ink px-12 py-11 text-white lg:flex xl:px-16">
-        <BrandMark inverted />
+        <BrandMark inverted animated />
 
         <div className="flex flex-1 flex-col justify-center py-16">
           <h1 className="max-w-[19ch] text-[34px] leading-[1.15] font-semibold tracking-[-0.028em] xl:text-[42px]">
@@ -25,18 +25,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         </div>
 
         <div className="border-t border-white/10 pt-7">
-          <p className="text-[13px] font-semibold text-white/85">{SOP_STEPS.length} tahap SOP</p>
-          <div className="mt-3.5 flex h-1.5 gap-[3px]" role="img" aria-label={`Alur kerja ${SOP_STEPS.length} tahap, dari ${SOP_STEPS[0]} sampai ${SOP_STEPS[SOP_STEPS.length - 1]}`}>
-            {SOP_STEPS.map((step, i) => (
-              <span key={step} title={step} className="flex-1 overflow-hidden rounded-full bg-white/10">
-                <span className="rail-fill block h-full rounded-full bg-[#a49bf6]" style={{ animationDelay: `${180 + i * 85}ms` }} />
-              </span>
-            ))}
-          </div>
-          <p className="mt-2.5 flex justify-between gap-4 text-xs text-white/45">
-            <span>{SOP_STEPS[0]}</span>
-            <span>{SOP_STEPS[SOP_STEPS.length - 1]}</span>
-          </p>
+          <LoginShowcase />
           <p className="mt-10 flex justify-between text-xs text-white/35">
             <span>StarCore Analytics</span>
             <span className="tabular">© {year}</span>
