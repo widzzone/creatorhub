@@ -117,7 +117,7 @@ export default async function JoinPage({ params }: Params) {
         <section>
           <JoinForm campaign={c} me={me} />
           <p className="mt-6 text-center text-xs leading-relaxed text-muted">
-            Diselenggarakan oleh {c.organization || 'StarCore Analytics'} melalui CreatorHub. Data Anda hanya digunakan untuk proses seleksi dan kerja sama campaign.
+            {c.organization && c.organization.trim().toLowerCase() !== 'creatorhub' ? `Diselenggarakan oleh ${c.organization} melalui CreatorHub.` : 'Diselenggarakan melalui CreatorHub.'} Data Anda hanya digunakan untuk proses seleksi dan kerja sama campaign.
           </p>
         </section>
       </div>

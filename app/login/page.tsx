@@ -16,20 +16,17 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         <BrandMark inverted animated />
 
         <div className="flex flex-1 flex-col justify-center py-16">
-          <h1 className="max-w-[19ch] text-[34px] leading-[1.15] font-semibold tracking-[-0.028em] xl:text-[42px]">
-            Kelola creator campaign dari pendaftaran sampai laporan akhir.
+          <h1 className="max-w-[16ch] text-[34px] leading-[1.15] font-semibold tracking-[-0.028em] xl:text-[42px]">
+            Satu tempat untuk setiap creator campaign.
           </h1>
           <p className="mt-6 max-w-[42ch] text-[15px] leading-[1.7] text-white/60">
-            Pendaftar, keputusan Brand, draft, link tayang, insight, dan pembayaran tercatat di satu tempat untuk tim, Brand, dan creator.
+            Tim CreatorHub, Brand, dan creator mengikuti alur yang sama, dari pendaftaran, brief, dan draft sampai publikasi, insight, dan pembayaran.
           </p>
         </div>
 
         <div className="border-t border-white/10 pt-7">
           <LoginShowcase />
-          <p className="mt-10 flex justify-between text-xs text-white/35">
-            <span>StarCore Analytics</span>
-            <span className="tabular">© {year}</span>
-          </p>
+          <p className="mt-10 text-xs text-white/35 tabular">© {year} CreatorHub</p>
         </div>
       </section>
 
@@ -51,11 +48,11 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
             </div>
 
             <p className="mx-auto mt-6 max-w-[40ch] text-center text-[13px] leading-relaxed text-balance text-muted">
-              Creator baru? Akun dibuat otomatis saat Anda mendaftar lewat link recruitment campaign.
+              Belum punya akun? Creator mendaftar lewat link recruitment campaign. Akun Brand dibuatkan oleh tim CreatorHub.
             </p>
           </div>
         </div>
-        <p className="mt-10 text-center text-xs text-faint lg:hidden">StarCore Analytics</p>
+        <p className="mt-10 text-center text-xs text-faint tabular lg:hidden">© {year} CreatorHub</p>
       </section>
     </main>
   );

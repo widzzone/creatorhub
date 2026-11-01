@@ -165,7 +165,7 @@ export function CampaignForm({
       <Panel>
         <PanelTitle title="Materi broadcast" description="Teks untuk dibagikan di grup WhatsApp atau media sosial. Link pendaftaran ditambahkan otomatis." />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <Field label="Channel recruitment"><Input {...bind('recruitment_channels')} placeholder="Grup WA creator, Instagram StarCore" /></Field>
+          <Field label="Channel recruitment"><Input {...bind('recruitment_channels')} placeholder="Grup WA creator, Instagram" /></Field>
           <Field label="Pesan broadcast" className="md:col-span-2"><Textarea {...bind('broadcast_message')} rows={5} /></Field>
         </div>
       </Panel>

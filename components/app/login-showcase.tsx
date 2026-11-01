@@ -5,17 +5,17 @@ import { SOP_STEPS } from '@/lib/constants';
 
 /** Satu kalimat per tahap SOP, ditampilkan bergantian di halaman login. */
 const STEP_NOTES = [
-  'Fee, kuota, dan kriteria creator ditetapkan bersama Brand.',
-  'Link pendaftaran dibagikan dan creator mendaftar sendiri.',
-  'Pendaftar dinilai otomatis sesuai kriteria campaign.',
+  'Detail campaign, fee, dan kriteria creator ditetapkan.',
+  'Creator mendaftar lewat link recruitment campaign.',
+  'Pendaftar ditinjau sesuai kriteria campaign.',
   'Creator terpilih menerima dan mengonfirmasi job offer.',
-  'Brand meninjau dan menyetujui daftar creator.',
-  'Creator menerima brief, produk, lalu mulai produksi.',
+  'Brand meninjau creator yang diajukan.',
+  'Brief dikirim dan produksi konten dimulai.',
   'Draft ditinjau dan direvisi lewat chat sebelum tayang.',
-  'Link konten yang tayang dicatat per creator.',
+  'Konten tayang dan link-nya dicatat.',
   'Data performa dikirim creator dan diverifikasi tim.',
   'Fee dibayar ke rekening creator dan statusnya tercatat.',
-  'Laporan akhir siap dibagikan ke Brand, campaign ditutup.',
+  'Laporan akhir disusun dan campaign ditutup.',
 ];
 
 const STEP_MS = 2600;
