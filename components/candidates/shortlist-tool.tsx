@@ -116,7 +116,7 @@ export function ShortlistTool({ campaigns, initialCampaign }: { campaigns: { id:
         {selected.length > 0 && (
           <div className="sticky bottom-4 mt-4 flex items-center justify-between gap-3 rounded-panel border border-line bg-ink px-5 py-3 text-white">
             <span className="text-sm tabular">{selected.length} kandidat dipilih</span>
-            <Button size="sm" className="bg-white text-ink hover:bg-white/90" onClick={() => setConfirm(true)}>Shortlist kandidat terpilih</Button>
+            <Button size="sm" onClick={() => setConfirm(true)}>Shortlist kandidat terpilih</Button>
           </div>
         )}
       </div>
